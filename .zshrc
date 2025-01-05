@@ -113,10 +113,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vl="vtex link"
-alias cl="yarn build --env.account carulla"
-alias el="yarn build --env.account exito"
+alias v="vtex link"
+alias vec=vtex switch exitocol -w faststore
+alias vef=vtex switch exito -w faststore
+alias vc="yarn build --env.account carulla"
+alias ve="yarn build --env.account exito"
 alias vb="vtex browse"
+alias python="python3"
+
+function cl(){
+  fnm use 14.15.0
+  ve
+  v
+}
+
+function acp() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
 
 eval "$(fnm env --use-on-cd)"
 
